@@ -1,0 +1,40 @@
+.about-home-section {
+  text-align: center;
+  padding: 100px 20px;
+  border-top: 1px solid rgba(128, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(128, 0, 0, 0.1);
+}
+
+.about-home-section h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 42px;
+  color: #fff;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(128, 0, 0, 0.3);
+}
+
+.about-home-section p {
+  font-family: 'Spectral', serif;
+  font-size: 20px;
+  color: var(--goth-silver);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .about-home-section {
+    padding: 60px 20px;
+  }
+
+  .about-home-section h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  .about-home-section p {
+    font-size: 16px;
+  }
+}

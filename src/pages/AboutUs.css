@@ -1,0 +1,97 @@
+.about-page {
+  color: #fff;
+  min-height: 100vh;
+  background: #111;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
+.delay-5 { animation-delay: 1.5s; }
+.delay-6 { animation-delay: 1.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+}
+
+.about-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.highlight {
+  font-size: 22px;
+  color: #ff0000;
+  font-weight: bold;
+  text-shadow: 0 0 5px red;
+}
+
+.cta-section {
+  margin-top: 40px;
+}
+
+.cta-button {
+  background: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255,0,0,0.6);
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #ff0000;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,0,0,0.8);
+}
+.neon-blink {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 0 0 5px red, 0 0 10px darkred;
+  animation: blinkNeon 1s infinite alternate;
+}
+
+@keyframes blinkNeon {
+  0% {
+    text-shadow: 0 0 5px red, 0 0 10px darkred;
+    opacity: 0.8;
+  }
+  50% {
+    text-shadow: 0 0 15px red, 0 0 30px darkred;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 5px red, 0 0 10px darkred;
+    opacity: 0.8;
+  }
+}

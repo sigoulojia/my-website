@@ -1,0 +1,216 @@
+.nav-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+    background: rgba(5, 5, 5, 0.9);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--goth-blood);
+    border-radius: 4px;
+    padding: 15px 40px;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(128, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.nav-brand {
+    z-index: 1001;
+}
+
+.nav-logo {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--goth-blood);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgba(128, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #fff;
+    text-shadow: 0 0 20px var(--goth-blood);
+}
+
+.nav-inner {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-family: 'Cinzel Decorative', cursive;
+    color: var(--goth-silver);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--goth-blood), 0 0 20px var(--goth-blood);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: "†";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    color: var(--goth-blood);
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scale(1.2);
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-bar {
+    width: 30px;
+    height: 2px;
+    background: var(--goth-silver);
+    border-radius: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    box-shadow: 0 0 5px var(--goth-glow);
+}
+
+/* Specific Gothic style for bars - pointed ends */
+.burger-bar::before,
+.burger-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 2px;
+    background: var(--goth-blood);
+}
+
+.burger-bar::before {
+    left: -2px;
+}
+
+.burger-bar::after {
+    right: -2px;
+}
+
+.burger-menu.open .burger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background: var(--goth-blood);
+}
+
+.burger-menu.open .burger-bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.burger-menu.open .burger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background: var(--goth-blood);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+    .nav-container {
+        padding: 15px 25px;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-inner {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #050505 0%, #1a0505 100%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000;
+        border-left: 1px solid var(--goth-blood);
+    }
+
+    .nav-inner.active {
+        right: 0;
+    }
+
+    .nav-inner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 27.5L60 30l-27.5 2.5L30 60l-2.5-27.5L0 30l27.5-2.5z' fill='%23800000' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        pointer-events: none;
+    }
+
+    .nav-link {
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    .nav-link::after {
+        font-size: 20px;
+        bottom: -30px;
+    }
+
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        z-index: 999;
+        backdrop-filter: blur(5px);
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
